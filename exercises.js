@@ -63,21 +63,29 @@ function rovarspraket(phrase){
 // ---------------------
 // Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers in an array of numbers. For example, sum([1,2,3,4]) should return 10, and multiply([1,2,3,4]) should return 24.
 // ---------------------
+//
+//
 
-function sum(){
-    //...
+function sum(myArray){
+    var answer = myArray.reduce(function(a,b) {
+        return a + b;
+    })
+return answer;
 }
 
-function multiply(){
-    //...
+function multiply(myArray2){
+    var answer = myArray2.reduce(function(a,b) {
+        return a * b;
+    })
+ return answer;
 }
 
 // ---------------------
 // Define a function reverse() that computes the reversal of a string. For example, reverse("jag testar") should return the string "ratset gaj".
 // ---------------------
 
-function reverse(){
-    //...
+function reverse(y){
+    return y.split('').reverse().join('');
 }
 
 // ---------------------
@@ -85,15 +93,24 @@ function reverse(){
 // ---------------------
 
 function findLongestWord(words){
-    //...
+    var longest = words.sort(function(a,b) {
+        return b.length - a.length;
+    }) [0]
+   return longest;
 }
 
 // ---------------------
 // Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.
 // ---------------------
 
+
 function filterLongWords(words, i){
-    //...
+    var compareArray = [];
+    var compare = words.forEach(function(word) {
+        if (word.length > i) {
+            compareArray.push(word);}
+    })
+    return compareArray;
 }
 
 // ---------------------
