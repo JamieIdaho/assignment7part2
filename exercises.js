@@ -36,16 +36,28 @@ function maxOfThree(num1, num2, num3){
 // ---------------------
 
 function isVowel(char){
-    return ("aeiouy".indexOf(char)) >= 0;
+    return ("aeiou".indexOf(char)) >= 0;
     }
 
 
 // ---------------------
 // Write a function translate() that will translate a text into "rÃ¶varsprÃ¥ket". That is, double every consonant and place an occurrence of "o" in between. For example, translate("this is fun") should return the string "tothohisos isos fofunon".
 // ---------------------
+var newArray = [];
 
 function rovarspraket(phrase){
-    //...
+    var x = phrase.split('');
+    console.log(x);
+
+    x.forEach(function(letter) {
+        if ("aeiou ".indexOf(letter) < 0) {
+            newArray.push(letter + 'o' + letter);
+        }
+        else if ("aeiou ".indexOf(letter) >= 0) {
+            newArray.push(letter);
+        }
+    })
+    console.log(newArray.join(''));
 }
 
 // ---------------------
