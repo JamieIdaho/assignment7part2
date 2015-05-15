@@ -118,5 +118,13 @@ function filterLongWords(words, i){
 // ---------------------
 
 function charFreq(string){
-    //...
-}
+    var frequencyList = new Object();
+    for (var i=0; i < string.length; i++) {
+            var character = string.charAt(i);
+          if (frequencyList[character]) {
+            frequencyList[character]++;}
+
+         else {frequencyList[character] = 1}
+         }
+    return frequencyList;
+};
